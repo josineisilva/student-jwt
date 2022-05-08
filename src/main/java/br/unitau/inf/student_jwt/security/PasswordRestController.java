@@ -54,7 +54,7 @@ public class PasswordRestController {
 			try {
 				MimeMessage mail = sender.createMimeMessage();
 				MimeMessageHelper helper = new MimeMessageHelper(mail);
-				helper.setFrom("noreply@unitau.br");
+				helper.setFrom(sender.getUsername());
 				helper.setTo(email);
 				helper.setSubject(subject);
 				helper.setText(content, true);
