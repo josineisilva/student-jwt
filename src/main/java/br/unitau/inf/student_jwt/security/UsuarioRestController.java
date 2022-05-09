@@ -77,7 +77,7 @@ public class UsuarioRestController {
 				try {
 					MimeMessage mail = sender.createMimeMessage();
 					MimeMessageHelper helper = new MimeMessageHelper(mail);
-					helper.setFrom(sender.getUsername());
+					helper.setFrom(System.getenv("STUDENT_SMTP_USER"));
 					helper.setTo(email);
 					helper.setSubject(subject);
 					helper.setText(content, true);
